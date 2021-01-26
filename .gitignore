@@ -1,0 +1,8 @@
+# Gradle project cache
+.gradle
+
+# Gradle build output
+build
+
+# Development environment
+.idea
