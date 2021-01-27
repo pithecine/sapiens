@@ -22,10 +22,8 @@ class FeatureInjectorTest {
 
     class SpecificFuelOilConsumption : (Double, Double) -> Double {
       override fun invoke(
-        @FeatureAlias(MASS_FUEL_CONSUMPTION_RATE)
-        fuelConsumption: Double,
-        @FeatureAlias(POWER_DEVELOPED)
-        powerDeveloped: Double
+        @FeatureAlias(MASS_FUEL_CONSUMPTION_RATE) fuelConsumption: Double,
+        @FeatureAlias(POWER_DEVELOPED) powerDeveloped: Double
       ): Double {
         return fuelConsumption / powerDeveloped
       }
