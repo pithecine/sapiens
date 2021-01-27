@@ -8,6 +8,10 @@ const val POWER_DEVELOPED = "Power Developed"
 
 class FeatureInjectorTest {
 
+  private fun calcQuotient(a: Double, b: Double): Double {
+    return a / b
+  }
+
   @Test
   fun testInject() {
 
@@ -44,11 +48,11 @@ class FeatureInjectorTest {
     )
 
     val product = FeatureInjector.inject(Product()::invoke, features)
-//    val quotient = FeatureInjector.inject(::calcQuotient, features)
+    val quotient = FeatureInjector.inject(::calcQuotient, features)
     val sfoc = FeatureInjector.inject(SpecificFuelOilConsumption()::invoke, features)
 
     assertEquals(5.5 * 6.7, product)
-//    assertEquals(5.5 / 6.7, quotient)
+    assertEquals(5.5 / 6.7, quotient)
     assertEquals(1820831.57 / 86.50, sfoc)
   }
 }
