@@ -7,7 +7,7 @@ import kotlin.reflect.jvm.isAccessible
 class FeatureInjector {
 
   companion object {
-    fun <T> inject(callable: KCallable<T>, features: Map<String, Any?>): T? {
+    fun <R> inject(callable: KCallable<R>, features: Map<String, Any?>): R? {
       return callable.apply { isAccessible = true }.callBy(buildArgs(callable.parameters, features))
     }
 
