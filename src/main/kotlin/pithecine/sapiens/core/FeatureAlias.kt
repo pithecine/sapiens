@@ -11,10 +11,7 @@ annotation class FeatureAlias(val alias: String) {
   companion object {
     fun resolveAlias(param: KParameter): String? {
       val ann = param.findAnnotation<FeatureAlias>()
-      if (ann != null) {
-        return ann.alias
-      }
-      return param.name
+      return ann?.alias ?: param.name
     }
   }
 }
