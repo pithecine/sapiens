@@ -20,7 +20,7 @@ dependencies {
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
   // Dependencies
-  implementation("org.jetbrains.kotlin:kotlin-reflect")
+  implementation(kotlin("reflect"))
 
   // Use the Kotlin test library.
   testImplementation("org.jetbrains.kotlin:kotlin-test")
