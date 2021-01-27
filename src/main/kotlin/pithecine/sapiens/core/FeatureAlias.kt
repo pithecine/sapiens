@@ -9,7 +9,7 @@ annotation class FeatureAlias(val alias: String) {
 
   // TODO: Also allow a flag for denoting runtime generated alias
   companion object {
-    fun resolveAlias(param: KParameter): String? {
+    fun resolve(param: KParameter): String? {
       val ann = param.findAnnotation<FeatureAlias>()
       return ann?.alias ?: param.name
     }

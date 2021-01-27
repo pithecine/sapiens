@@ -12,7 +12,7 @@ class FeatureInjector {
 
     private fun buildArgs(params: List<KParameter>, features: Map<String, Any?>): Map<KParameter, Any?> {
       val args = mutableMapOf<KParameter, Any?>()
-      params.map { args.put(it, features[FeatureAlias.resolveAlias(it)]) }
+      params.map { args.put(it, features[FeatureAlias.resolve(it)]) }
       return args
     }
   }
